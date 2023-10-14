@@ -25,32 +25,32 @@ namespace Contexts.Repositories.Concrete
 
         public void AddRange(ICollection<T> entities)
         {
-            throw new NotImplementedException();
+            DB_Set.AddRange(entities);
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            DB_Set.Remove(entity);
         }
 
         public ICollection<T> GetAll()
         {
-            throw new NotImplementedException();
+            return DB_Set.ToList();
         }
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return DB_Set.FirstOrDefault(t => t.Id == id);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            library_DB.SaveChanges();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            DB_Set.Update(entity);
         }
     }
 }
