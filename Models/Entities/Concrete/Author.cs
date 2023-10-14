@@ -9,6 +9,6 @@ namespace Models.Entities.Concrete
         public string LastName { get; set; }
 
         // Navigation Property
-        public virtual ICollection<Book> MyProperty { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

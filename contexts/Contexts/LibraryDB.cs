@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Contexts.Configurations;
+using Microsoft.EntityFrameworkCore;
 using Models.Entities.Concrete;
 
 namespace Contexts.Contexts
@@ -7,15 +8,20 @@ namespace Contexts.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseLazyLoadingProxies()
-                .UseSqlServer("Connection String");
+            optionsBuilder
+                .UseSqlServer("");
 
             base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new StudentConfig());
+            modelBuilder.ApplyConfiguration(new S_CardConfig());
+            modelBuilder.ApplyConfiguration(new TeacherConfig());
+            modelBuilder.ApplyConfiguration(new T_CardConfig());
+            modelBuilder.ApplyConfiguration(new BookConfig());
+            modelBuilder.ApplyConfiguration(new GroupConfig());
         }
 
 
@@ -25,6 +31,37 @@ namespace Contexts.Contexts
         public virtual DbSet<Author> Authors { get; set; }
 
         public virtual DbSet<Category> Categories { get; set; }
+
+        public virtual DbSet<Department> Departments { get; set; }
+        
+        public virtual DbSet<Faculty> Faculties { get; set; }
+
+        public virtual DbSet<Group> Groups { get; set; }
+
+        public virtual DbSet<Lib> Libs { get; set; }
+        
+        public virtual DbSet<Press> Press { get; set; }
+        
+        public virtual DbSet<S_Card> S_Cards { get; set; }
+
+        public virtual DbSet<Student> Students { get; set; }
+
+        public virtual DbSet<T_Card> T_Cards { get; set; }
+
+        public virtual DbSet<Teacher> Teachers { get; set; }
+
+        public virtual DbSet<Theme> Themes { get; set; }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

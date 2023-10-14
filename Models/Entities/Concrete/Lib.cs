@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Models.Entities.Abstratct;
 
 namespace Models.Entities.Concrete
 {
-    internal class Lib
+    public class Lib:BaseEntity
     {
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        // Navigation Property
+        public virtual ICollection<S_Card> S_Cards { get; set; }
+
+        public  virtual ICollection<T_Card> T_Cards { get; set; }
     }
 }

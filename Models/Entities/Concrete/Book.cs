@@ -26,5 +26,13 @@ namespace Models.Entities.Concrete
         public virtual Category Category { get; set; }
 
         public virtual  Author Author { get; set; }
+
+        public virtual Press Press { get; set; }
+
+        public virtual Theme Theme { get; set; }
+
+        public virtual ICollection<S_Card> S_Cards { get; set; }
+
+        public virtual ICollection<T_Card> T_Cards { get; set; }
     }
 }

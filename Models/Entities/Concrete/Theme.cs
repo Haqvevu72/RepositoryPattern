@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Models.Entities.Abstratct;
 
 namespace Models.Entities.Concrete
 {
-    internal class Theme
+    public class Theme:BaseEntity
     {
+        public string Name { get; set; }
+
+        // Navigation Property
+        public virtual ICollection<Book> Books { get; set; }
     }
 }
