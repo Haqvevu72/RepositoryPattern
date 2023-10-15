@@ -8,8 +8,7 @@ namespace Contexts.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder
-                .UseSqlServer("");
+            optionsBuilder.UseSqlServer("Data Source=STHQ0128-04;Database=LibraryDB;User ID=admin;Password=admin;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
             base.OnConfiguring(optionsBuilder);
         }
